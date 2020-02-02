@@ -132,11 +132,11 @@
 			<version>5.1.6</version>
 		</dependency> 
 		<!-- https://mvnrepository.com/artifact/com.ibm/db2jcc -->
-<dependency>
+<!--<dependency>
     <groupId>com.ibm</groupId>
     <artifactId>db2jcc</artifactId>
     <version>9</version>
-</dependency>
+</dependency>-->
  
 		
 		<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
