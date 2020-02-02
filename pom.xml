@@ -131,17 +131,21 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency> 
-		 <dependency>
-			<groupId>db2</groupId>
-			<artifactId>db2cc</artifactId>
-			<version>9.0</version>
-		</dependency> 
+		<!-- https://mvnrepository.com/artifact/com.ibm/db2jcc -->
+<dependency>
+    <groupId>com.ibm</groupId>
+    <artifactId>db2jcc</artifactId>
+    <version>9</version>
+</dependency>
+ 
 		
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.1</version>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+<dependency>
+    <groupId>com.mchange</groupId>
+    <artifactId>c3p0</artifactId>
+    <version>0.9.5.5</version>
+</dependency>
+
 		
 		
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
