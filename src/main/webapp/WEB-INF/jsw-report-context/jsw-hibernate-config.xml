@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>WEB-INF/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- Tracking Server Connecting -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!-- Connection properties -->
+
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.password}" />
+
+		<!-- Basic Pool Configuration -->
+		<property name="initialPoolSize" value="${initialPoolSize}" />
+		<property name="minPoolSize" value="${minPoolSize}" />
+		<property name="maxPoolSize" value="${maxPoolSize}" /> <!-- No of connecton -->
+		<property name="maxIdleTime" value="${maxIdleTime}" />
+		<property name="acquireIncrement" value="${acquireIncrement}" />
+
+		<!-- Configuring Connection Testing -->
+
+		<property name="idleConnectionTestPeriod" value="${idleConnectionTestPeriod}" />
+		<property name="maxIdleTimeExcessConnections" value="${maxIdleTimeExcessConnections}" />
+		<property name="maxConnectionAge" value="${maxConnectionAge}" />
+		<property name="preferredTestQuery" value="${preferredTestQuery}" />
+
+		<!-- Configuring Statement Pooling -->
+		<property name="maxStatements" value="${maxStatements}" /> <!-- 0 means: statement caching is turned off. -->
+		<property name="numHelperThreads" value="${numHelperThreads}" />
+
+		<!-- Configuring Recovery From Database Outages -->
+		<property name="acquireRetryAttempts" value="${acquireRetryAttempts}" />
+		<property name="AcquireRetryDelay" value="${AcquireRetryDelay}" />
+		<property name="BreakAfterAcquireFailure" value="${BreakAfterAcquireFailure}" />
+
+		<!--Other DataSource Configuration <property name="checkoutTimeout" value="${checkoutTimeout}" 
+			/> -->
+
+		<!--Configuring to Debug and Workaround Broken Client Applications, Don't 
+			use these in production' -->
+		<property name="unreturnedConnectionTimeout" value="${unreturnedConnectionTimeout}" />
+		<property name="debugUnreturnedConnectionStackTraces" value="${debugUnreturnedConnectionStackTraces}" />
+
+	</bean>
+
+	<!-- <bean id="jswSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  -->
+		 <bean id="jswSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<qualifier value="dbServer" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="com.jsw.domain.object" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.mysql.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.connection.autocommit">${hibernate.connection.autocommit}</prop>
+				<prop key="hibernate.connection.release_mode">${hibernate.connection.release_mode}</prop>
+				<prop key="hibernate.current_session_context_class">${hibernate.current_session_context_class}</prop>
+				<prop key="entitymanager.packages.to.scan">com.ff.integration.de</prop>
+			</props>
+		</property>
+	</bean> 
+	
+	
+	
+</beans>
+

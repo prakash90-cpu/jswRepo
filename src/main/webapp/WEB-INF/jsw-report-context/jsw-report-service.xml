@@ -1,0 +1,62 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/mvc 
+	 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+   http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	
+
+	<bean id="userService" class="jsw.report.service.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+
+<bean id="masterService" class="jsw.report.service.MasterServiceImpl">
+		<property name="masterDao" ref="masterDao"></property>
+	</bean>
+	
+
+	<bean id="vwService" class="jsw.report.service.VwServiceImpl">
+		<property name="vwDao" ref="vwDao"></property>
+	</bean>
+
+<bean id="apService" class="jsw.report.service.ApServiceImpl">
+		<property name="apDao" ref="apDao"></property>
+	</bean>
+	
+	<bean id="arService" class="jsw.report.service.ARServiceImpl">
+		<property name="arDao" ref="arDao"></property>
+	</bean>
+
+<bean id="commService" class="jsw.report.service.CommServiceImpl">
+		<property name="commDao" ref="commDao"></property>
+	</bean>
+	
+	<bean id="rtrService" class="jsw.report.service.RTRServiceImpl">
+		<property name="rtrDao" ref="rtrDao"></property>
+	</bean>
+
+   <bean id="hrService" class="jsw.report.service.HRServiceImpl">
+		<property name="hrDao" ref="hrDao"></property>
+	</bean>
+	<bean id="corpService" class="jsw.report.service.CORPServiceImpl">
+		<property name="corpDao" ref="corpDao"></property>
+	</bean>
+	
+	<bean id="taxService" class="jsw.report.service.TaxServiceImpl">
+		<property name="taxDao" ref="taxDao"></property>
+	</bean>
+	<bean id="extService" class="jsw.report.service.ManualExtractionServiceImpl">
+	</bean> 
+	
+	<bean id="ldapService" class="jsw.report.service.LDAPServiceImpl">
+	<property name="LDAP_HOST_NAME" value="${LDAP_HOST_NAME}"></property>
+	<property name="LDAP_PORT" value="${LDAP_PORT}"></property>
+	<property name="baseDN" value="${baseDN}"></property>
+	<property name="LDAP_ENV" value="${LDAP_ENV}"></property>
+	</bean>
+</beans>

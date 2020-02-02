@@ -1,0 +1,64 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/mvc 
+	 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+   http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean name="userDao" class="jsw.report.dao.UserDaoImpl">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	
+	<bean name="vwDao" class="jsw.report.dao.VwDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+   
+   <bean name="masterDao" class="jsw.report.dao.MasterDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+   
+   
+   
+		<bean name="apDao" class="jsw.report.dao.ApDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean name="arDao" class="jsw.report.dao.ARDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	
+	<bean name="commDao" class="jsw.report.dao.CommDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean name="rtrDao" class="jsw.report.dao.RTRDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean name="hrDao" class="jsw.report.dao.HRDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean name="corpDao" class="jsw.report.dao.CORPDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean name="taxDao" class="jsw.report.dao.TaxDaoImpl" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean name="excellGen" class="jsw.report.excelUtil.ExcellGenerator" >
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+ 	
+  <!--   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.6.38.160:3306/jsw" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean> -->
+   
+</beans>

@@ -1,0 +1,102 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/mvc 
+	 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+   http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<import resource="jsw-report-service.xml" />
+	<import resource="jsw-report-dao.xml" />
+	<import resource="jsw-hibernate-config.xml" />
+	<import resource="classpath:jsw-dms-extraction-service.xml" />
+	<import resource="classpath:jsw-dms-extraction-dao.xml"/>
+	<import resource="classpath:jsw-dms-schedulers.xml" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+	<bean id="tableConfig"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:table.properties"></property>
+	</bean>
+
+
+
+	<import resource="jsw-report-service.xml" />
+	<import resource="jsw-report-dao.xml" />
+	<import resource="jsw-hibernate-config.xml" />
+	<import resource="classpath:jsw-dms-extraction-service.xml" />
+	<import resource="classpath:jsw-dms-extraction-dao.xml" />
+	<import resource="classpath:jsw-dms-schedulers.xml" /> 
+	 
+	 
+<!--
+	<import resource="jsw-report-service.xml" />
+	<import resource="jsw-report-dao.xml" />
+	<import resource="jsw-hibernate-config.xml" />
+	<import resource="classpath:jsw-dms-extraction-service.xml" />
+	<import resource="classpath:jsw-dms-extraction-dao.xml" />
+	 <import resource="classpath:jsw-dms-schedulers.xml" /> -->
+
+	
+	
+	<!-- <import resource="classpath:jsw-dcm-extraction-dao.xml" /> <import 
+		resource="classpath:jsw-dcm-extraction-service.xml" /> <import resource="classpath:jsw-sap-extraction-dao.xml" 
+		/> <import resource="classpath:jsw-sap-extraction-service.xml" /> -->
+	<context:component-scan base-package="jsw.report.controller" />
+	<mvc:resources mapping="/**" location="/" />
+	<!-- <resources mapping="/**" location="/" /> -->
+	<mvc:annotation-driven />
+
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<context:component-scan base-package="jsw.report" />
+
+	<bean id="loginDelegate" class="jsw.report.delegate.LoginDelegate">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="vwDelegate" class="jsw.report.delegate.VwDelegate">
+		<property name="vwService" ref="vwService"></property>
+	</bean>
+
+	<bean id="masterDelegate" class="jsw.report.delegate.MasterDelegate">
+		<property name="masterService" ref="masterService"></property>
+	</bean>
+
+	<bean id="apDelegate" class="jsw.report.delegate.ApDelegate">
+		<property name="apService" ref="apService"></property>
+	</bean>
+	<bean id="commDelegate" class="jsw.report.delegate.CommDelegate">
+		<property name="commService" ref="commService"></property>
+	</bean>
+	<bean id="rtrDelegate" class="jsw.report.delegate.RTRDelegate">
+		<property name="rtrService" ref="rtrService"></property>
+	</bean>
+
+	<bean id="hrDelegate" class="jsw.report.delegate.HRDelegate">
+		<property name="hrService" ref="hrService"></property>
+	</bean>
+
+	<bean id="corpDelegate" class="jsw.report.delegate.CORPDelegate">
+		<property name="corpService" ref="corpService"></property>
+	</bean>
+
+	<bean id="arDelegate" class="jsw.report.delegate.ARDelegate">
+		<property name="arService" ref="arService"></property>
+	</bean>
+
+	<bean id="taxDelegate" class="jsw.report.delegate.TaxDelegate">
+		<property name="taxService" ref="taxService"></property>
+	</bean>
+
+
+</beans>

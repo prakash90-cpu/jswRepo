@@ -1,0 +1,193 @@
+#connURI = http://10.6.1.65:9080/wsi/FNCEWS40MTOM/
+#connURI = http://10.10.2.113:9080/wsi/FNCEWS40MTOM/
+#connURI = http://10.10.2.67:9080/wsi/FNCEWS40MTOM/
+#connURI = http://in-air-bimapp32.corp.capgemini.com:9080/wsi/FNCEWS40MTOM/
+
+#connURI = iiop://10.10.2.67:2809/FileNet/Engine
+
+
+#
+username =ceadmin
+password =filenet@123
+connURI = http://10.10.2.67:9080/wsi/FNCEWS40MTOM/
+PEConn=TGCon
+
+optionalJAASStanzaName = FileNetP8WSI
+objectStoreName = TARGETOS
+rostername=JSWGBS_FIN_AP
+
+eventlog0=AP_POSupplyInvoice
+eventlog1=AP_POServicesInvoice
+eventlog2=AP_SOServiceInvoice
+eventlog3=AP_CustomBRMInvoice
+eventlog4=AP_CustomNonBRMInvoice
+eventlog5=AP_ERSInvoices
+eventlog6=AP_TMCInvoice
+eventlog7=AP_NonPOEmployeeInvoice
+eventlog8=AP_NonPOVendorInvoice
+eventlog9=AP_ProcessEPayment
+eventlog10=AP_BankReconciliation
+eventlog11=AP_BG_PBGRenewalOrRevoking
+eventlog12=AP_BusinessAnalysis
+eventlog13=AP_PostPaymentAudit
+eventlog14=AP_PrePaymentAudit
+eventlog15=AP_VendorCreditBalances
+eventlog16=AP_VendorDebitBalances
+eventlog17=AP_AdvancePayment
+eventlog18=AP_ReleaseBG
+eventlog19=AP_VoidChequeAndReissue
+eventlog20=AP_ChequePayment
+eventlog21=AP_ReceiveBG
+eventlog22=AP_CreditOrDebitNote
+eventlog23=AP_ArchiveDocuments
+eventlog24=AP_DestroyArchivedDocuments
+eventlog25=AP_GRIRReview
+eventlog26=AP_VendorReconciliation
+eventlog27=AP_ResolveVendorQueries
+eventlog28=AP_UrgentPayment
+eventlog29=AP_PrepareManagementReport
+eventlog30=AP_RetrieveDocuments
+
+
+propString0=Gbl_Amount:Float|COM_AssociateID:String|Gbl_BarCodeDC:String|CmAcmCaseState:Integer|Gbl_CaseStatus:String|Gbl_CompanyName:String|Gbl_Currency:String|Gbl_CurrentRole:String|Gbl_DocumentSource:String|Gbl_InvoiceDate:Date|Gbl_Location:String|Gbl_PaymentRefNo:String|AP_Received_Date:Date|AP_SAPReferenceforRectification:String|Gbl_SAPReference:String|CmAcmCaseIdentifier:String|DateCreated:Date|AP_DocumentNumber:String|Gbl_VendorCode:String|Gbl_VendorInvoiceNo:String|Gbl_VendorName:String|AP_CENVATAmount:Float|AP_CENVATReferenceNo:String|AP_CENVATCreditEligibility:String|ArchiveDocumentStatus:String|Gbl_EmpID:String|Gbl_EmpName:String|Gbl_PONumber:String|DateLastModified:Date
+
+#AP_POSupplyInvoice
+queryString0= SELECT [This],[AP_ABReferenceNo],[AP_AdjustedAmount],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[AR_BGNumber],[AP_BGReturnDate],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[AP_CrDrNoteAmount],[AP_CrDrNoteRefNo],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[COM_Emergency],[AP_ExciseInvoiceNo],[AP_DocumentNumber],[Gbl_InvoiceDate],[AP_InvoiceType],[AP_InvoiceText],[Gbl_Location],[AP_NetPayableAmount],[Gbl_PaymentRefNo],[Gbl_PONumber],[Gbl_ReasonForManualParking],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[AP_PlantFinanceApprovalStatus],[AP_VATAmount],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[Gbl_WBSNO],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_POSupplyInvoice]
+
+#AP_POServicesInvoice
+queryString1= SELECT [This],[AP_ABReferenceNo],[AP_AdjustedAmount],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[AR_BGNumber],[AP_BGReturnDate],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[AP_CrDrNoteAmount],[AP_CrDrNoteRefNo],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[COM_Emergency],[AP_ExciseInvoiceNo],[AP_DocumentNumber],[Gbl_InvoiceDate],[AP_InvoiceType],[AP_InvoiceText],[Gbl_Location],[AP_NetPayableAmount],[Gbl_PaymentRefNo],[Gbl_PONumber],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[AP_PlantFinanceApprovalStatus],[AP_VATAmount],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[Gbl_WBSNO],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_POServicesInvoice]
+
+#AP_SOServiceInvoice
+queryString2= SELECT [This],[AP_ABReferenceNo],[AP_AdjustedAmount],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[AR_BGNumber],[AP_BGReturnDate],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[AP_CrDrNoteAmount],[AP_CrDrNoteRefNo],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[COM_Emergency],[AP_ExciseInvoiceNo],[AP_DocumentNumber],[Gbl_InvoiceDate],[AP_InvoiceType],[AP_InvoiceText],[Gbl_Location],[AP_NetPayableAmount],[Gbl_PaymentRefNo],[Gbl_PONumber],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[AP_PlantFinanceApprovalStatus],[AP_VATAmount],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[Gbl_WBSNO],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_SOServiceInvoice]
+
+#eventlog4 =AP_CustomBRMInvoice
+queryString3= SELECT [This],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[AR_BGNumber],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[COM_Emergency],[AP_ExciseInvoiceNo],[Gbl_InvoiceDate],[AP_InvoiceType],[AP_InvoiceText],[Gbl_Location],[Gbl_PaymentRefNo],[Gbl_PONumber],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[AP_VATAmount],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_CustomBRMInvoice]
+
+
+#eventlog4=AP_CustomNonBRMInvoice
+queryString4= SELECT [This],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[COM_Emergency],[AP_ExciseInvoiceNo],[Gbl_InvoiceDate],[AP_InvoiceType],[AP_InvoiceText],[Gbl_Location],[Gbl_PaymentRefNo],[Gbl_PONumber],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_CustomNonBRMInvoice]
+
+
+#eventlog5=AP_ERSInvoices
+queryString5= SELECT [This],[Gbl_Amount],[COM_AssociateID],[Gbl_BarCodeDC],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[Gbl_Currency],[Gbl_CurrentRole],[Gbl_DocumentSource],[AP_DocumentNumber],[Gbl_InvoiceDate],[Gbl_Location],[Gbl_PaymentRefNo],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_ERSInvoices]
+
+
+#eventlog6=AP_TMCInvoice
+queryString6= SELECT [This],[AP_ABReferenceNo],[AP_AdjustedAmount],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[AR_BGNumber],[AP_BGReturnDate],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[AP_CrDrNoteAmount],[AP_CrDrNoteRefNo],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[COM_Emergency],[AP_ExciseInvoiceNo],[Gbl_InvoiceDate],[AP_InvoiceType],[AP_InvoiceText],[Gbl_Location],[AP_NetPayableAmount],[Gbl_PaymentRefNo],[Gbl_PONumber],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[AP_PlantFinanceApprovalStatus],[AP_VATAmount],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_TMCInvoice]
+
+#eventlog7=AP_NonPOEmployeeInvoice
+queryString7= SELECT [This],[Gbl_EmpGrade],[Gbl_EmpID],[Gbl_EmpName],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[Gbl_InvoiceDate],[AP_InvoiceType],[Gbl_Location],[Gbl_PaymentRefNo],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_NonPOEmployeeInvoice]
+
+#eventlog8=AP_NonPOVendorInvoice
+queryString8= SELECT [This],[Gbl_Amount],[ArchiveDocumentStatus],[COM_AssociateID],[Gbl_BarCodeDC],[CmAcmCaseState],[Gbl_CaseStatus],[AP_CENVATAmount],[AP_CENVATReferenceNo],[AP_CENVATCreditEligibility],[Gbl_CompanyName],[Gbl_Currency],[Gbl_CurrentRole],[AP_DocType],[Gbl_DocumentSource],[AP_DuplicateCheck],[AP_ExciseInvoiceNo],[Gbl_InvoiceDate],[AP_InvoiceType],[Gbl_Location],[Gbl_PaymentRefNo],[AP_Received_Date],[AP_SAPReferenceforRectification],[Gbl_SAPReference],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[Gbl_Year],[CmAcmCaseIdentifier],[DateCreated],[DateLastModified],[Id] FROM [AP_NonPOVendorInvoice]
+
+#eventlog9=AP_ProcessEPayment
+queryString9= SELECT [This],[Gbl_Amount],[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_InvoiceDate],[Gbl_Location],[Gbl_PaymentRefNo],[Gbl_SAPReference],[Gbl_VendorInvoiceNo],[CmAcmCaseIdentifier],[Gbl_CurrentRole],[DateCreated],[DateLastModified],[Id] From [AP_ProcessEPayment]
+
+#eventlog10=AP_BankReconciliation
+queryString10= SELECT [This],[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Location],[CmAcmCaseIdentifier],[Gbl_CurrentRole],[DateCreated],[DateLastModified],[Id] From [AP_BankReconciliation]
+
+#eventlog11=AP_BG_PBGRenewalOrRevoking
+queryString11= SELECT [This],[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Location],[CmAcmCaseIdentifier],[Gbl_CurrentRole],[DateCreated],[DateLastModified],[Id] From [AP_BG_PBGRenewalOrRevoking]
+
+#eventlog12=AP_BusinessAnalysis
+queryString12= SELECT [This],[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Location],[AP_BAReportType],[CmAcmCaseIdentifier],[Gbl_CurrentRole],[DateCreated],[DateLastModified],[Id] From [AP_BusinessAnalysis]
+
+#eventlog13=AP_PostPaymentAudit
+queryString13= SELECT [This],[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Location],[Gbl_SAPReference],[CmAcmCaseIdentifier],[Gbl_CurrentRole],[DateCreated],[DateLastModified],[Id] From [AP_PostPaymentAudit]
+
+#eventlog14=AP_PrePaymentAudit
+queryString14= SELECT [This],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Location],[Gbl_CurrentRole],[CmAcmCaseIdentifier],[AP_ABReferenceNo],[Gbl_Amount],[Gbl_BarCodeDC], [Gbl_CompanyName],[AP_CrDrType],[AP_RequestingDepartment],[Gbl_FRFNumber],[AP_DocumentNumber], [Gbl_InvoiceDate],[Gbl_VendorCode],[Gbl_VendorName],[Gbl_VendorInvoiceNo], [DateCreated],[DateLastModified],[Id] From [AP_PrePaymentAudit]
+
+#eventlog15=AP_VendorCreditBalances
+queryString15= SELECT [This],[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Location],[CmAcmCaseIdentifier],[Gbl_CurrentRole],[Gbl_Month],[DateCreated],[DateLastModified],[Id] From [AP_VendorCreditBalances]
+
+#eventlog16=AP_VendorDebitBalances
+queryString16= SELECT [This],[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_Location],[Gbl_VendorCode],[Gbl_VendorName],[COM_InitiateLocationBuyer],[CmAcmCaseIdentifier],[Gbl_CurrentRole],[DateCreated],[DateLastModified],[Id] From [AP_VendorDebitBalances]
+
+#eventlog17=AP_AdvancePayment
+queryString17= SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_CurrentRole],[CmAcmCaseIdentifier],[Gbl_BankAccountNumber],[Gbl_BankName],[AP_ChequeAmount],[AP_ChequeDate],[AP_ChequeNo],[DateCreated],[DateLastModified],[Gbl_Location],[Gbl_VendorCode],[Gbl_VendorName],[Gbl_PONumber],[Gbl_SAPReference],[Gbl_FRFNumber],[AP_RequestingDepartment],[Gbl_PaymentRefNo],[COM_Emergency], [Id] From [AP_AdvancePayment]
+
+#eventLog18=AP_ReleaseBG	
+queryString18=SELECT [This],[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_CurrentRole],[Gbl_Location],[Gbl_SAPReference],[Gbl_VendorCode],[Gbl_VendorName],[AR_BGNumber],[AP_BGReturnDate],[DateCreated],[DateLastModified],[Id] From [AP_ReleaseBG]
+
+#eventLog19=AP_VoidChequeAndReissue
+queryString19= SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_CurrentRole],[CmAcmCaseIdentifier],[Gbl_BankAccountNumber],[Gbl_BankName],[AP_ChequeAmount],[AP_ChequeDate],[AP_ChequeNo],[DateCreated],[DateLastModified],[Gbl_Location],[Gbl_VendorCode],[Gbl_VendorName],[Gbl_HouseBankKey],[Gbl_SAPReference],[Gbl_PaymentRefNo],[Id] From [AP_VoidChequeAndReissue]
+
+#eventlog20=AP_ChequePayment
+queryString20= SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_CurrentRole],[CmAcmCaseIdentifier],[Gbl_BankAccountNumber],[Gbl_BankName],[AP_ChequeAmount],[AP_ChequeDate],[AP_ChequeNo],[DateCreated],[DateLastModified],[Gbl_Location],[Gbl_VendorCode],[Gbl_VendorName],[Gbl_HouseBankKey],[Gbl_SAPReference],[Gbl_PaymentRefNo],[Id] From [AP_ChequePayment]
+
+#eventlog21=AP_ReceiveBG
+queryString21=SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_CurrentRole],[CmAcmCaseIdentifier],[Gbl_BankName],[Gbl_Amount],[Gbl_BankBranch],[Gbl_BarCodeDC],[Gbl_Currency],[COM_InitiateReceiptCoordinationDomestic],[Gbl_InvoiceDate],[AP_InvoiceType],[Gbl_Location],[Gbl_PONumber],[Gbl_SAPReference],[Gbl_Validity],[Gbl_VendorCode],[Gbl_VendorName],[Gbl_VendorInvoiceNo],[DateCreated],[DateLastModified],[Id]  From [AP_ReceiveBG]
+
+#eventlog22=AP_CreditOrDebitNote
+queryString22=SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[AP_AdjustedAmount],[Gbl_BarCodeDC],[Gbl_Currency],[Gbl_CompanyName],[Gbl_CurrentRole],[AP_CrDrType],[AP_RequestingDepartment],[AP_DocumentNumber],[Gbl_InvoiceDate],[AP_NetPayableAmount],[Gbl_VendorCode],[Gbl_VendorName],[Gbl_SAPReference],[Gbl_PaymentRefNo],[DateCreated],[DateLastModified],[Id],[Gbl_PONumber],[Gbl_VendorInvoiceNo] From [AP_CreditOrDebitNote]
+
+#eventlog23=AP_ArchiveDocuments
+queryString23=SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_Location] ,[DateCreated],[DateLastModified],[Id] From [AP_ArchiveDocuments]
+
+
+#eventLog24=AP_DestroyArchivedDocuments
+queryString24=SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_Location] ,[DateCreated],[DateLastModified],[Id] From [AP_DestroyArchivedDocuments]
+
+#eventlog25=AP_GRIRReview
+queryString25=SELECT  [This] ,[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_Location],[Gbl_BankName],[DateCreated],[DateLastModified],[Id] From [AP_GRIRReview]
+
+#eventlog26=AP_VendorReconciliation
+queryString26=SELECT [This],[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CompanyName],[Gbl_CurrentRole],[Gbl_CaseStatus],[Gbl_Location],[AP_FromDate],[AP_ToDate],[Gbl_VendorCode],[Gbl_VendorName],[DateCreated],[DateLastModified],[Id],[Gbl_SAPReference] From [AP_VendorReconciliation]
+
+#eventlog27=AP_ResolveVendorQueries
+queryString27=SELECT[This],[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_Location],[Gbl_VendorCode],[Gbl_VendorName],[AP_InvoiceType],[DateCreated],[DateLastModified],[Id] From [AP_ResolveVendorQueries]
+
+#eventLog28=AP_UrgentPayment
+queryString28=SELECT[This],[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_CurrentRole],[Gbl_Location],[Gbl_Amount],[AP_DocumentNumber],[AP_FRFDate],[Gbl_FRFNumber],[Gbl_InvoiceDate],[Gbl_PaymentRefNo],[Gbl_PONumber],[AP_Received_Date],[Gbl_SAPReference],[Gbl_VendorCode],[Gbl_VendorInvoiceNo],[Gbl_VendorName],[DateCreated],[DateLastModified],[Id] From [AP_UrgentPayment]
+
+#eventLog29=AP_PrepareManagementReport
+queryString29=SELECT [This],[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_CompanyName],[Gbl_CurrentRole],[Gbl_Location],[Gbl_Frequency],[AP_MISReport],[Gbl_Remark],[DateCreated],[DateLastModified],[Id] From [AP_PrepareManagementReport]
+
+#eventLog30=AP_RetrieveDocuments
+queryString30=SELECT [This],[COM_AssociateID],[CmAcmCaseState],[CmAcmCaseIdentifier],[Gbl_CaseStatus],[Gbl_Location],[AP_CampaignNumber],[Gbl_Requester],[Gbl_Remark],[DateCreated],[DateLastModified],[Id] From [AP_RetrieveDocuments]
+
+
+#WIP Reports Properties
+auto_WIP=yes
+interval_WIP=5
+beginCount_WIP=0
+count_WIP=30
+From_Date_WIP=2016-12-01T00:00:00Z
+To_Date_WIP=2017-02-28T23:00:00Z
+frequency_WIP=
+dateTypeWIP=DateCreated
+merge_WIP=no
+destination_folder_WIP=D:\\DMSCustomReport\\AP\\output\\WIP_Cases\\
+temp_folder_WIP=C:\\temp\\
+
+#Completed Cases Reports Properties
+auto=yes
+interval=1
+beginCount=0
+count=0
+From_Date=2016-12-27T00:00:00Z
+To_Date=2016-12-30T23:00:00Z
+frequency=
+dateTypeCompleted=DateLastModified
+merge=no
+destination_folder_Completed=D:\\DMSCustomReport\\AP\\output\\Completed_Cases\\
+temp_folder=C:\\temp\\
+
+
+#frequency = daily,weekly,monthly
+
+date_range=
+
+#From_Date=2016-08-12T00:00:00Z
+#To_Date=2017-01-31T23:00:00Z
+
+#logfilepath=D:\\DMSCustomReport\\AP\\log4j.properties
+logfilepath=C:\\workspace\\DMSReport2\\log4j.properties
+logger=ap_logger
+businessName=AP
+
+
+
+
